@@ -1,0 +1,26 @@
+{
+	"description": "Mocha sonar generic test report integrator",
+	"homepage": "",
+	"keywords": ["mocha", "sonar", "coverage", "generic test"],
+	"license": "MIT",
+	"main": "index.js",
+	"maintainers": [
+		{
+			"name": "Qingguo Yu",
+			"email": "yuqingguo@gmail.com"
+		}
+	],
+	"name": "mocha-sonar-generic-test-coverage-file",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/qingguo-yu/mocha-sonar-generic-test-coverage-file.git"
+	},
+	"version": "0.0.1",
+	"devDependencies": {
+    "mocha": "^2.4.5"
+  },
+  "dependencies": {
+    "mkdirp": "^0.5.1"
+  }
+
+}
