@@ -10,6 +10,7 @@ module.exports = function (runner) {
 	var title,fd;
 	var filePath = process.env.GUNIT_FILE  || process.cwd() + "/gunit.xml"
 	var stackF;
+	console.log('filePath-->', filePath);
 	if(fs.existsSync(filePath)){
 		fs.unlinkSync(filePath);
 	}
