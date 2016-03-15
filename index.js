@@ -8,21 +8,18 @@ module.exports = function (runner) {
 
 	var stack = {};
 	var title,fd;
-	var filePath = process.env.GUNIT_FILE  || process.cwd() + "/gunit.xml"
+	var root = process.env.PWD;
+	var filePath = process.env.GUNIT_FILE  || root + "/gunit.xml"
 	var stackF;
-	console.log('filePath-->', filePath);
 	if(fs.existsSync(filePath)){
 		fs.unlinkSync(filePath);
 	}
 	mkdirp.sync(path.dirname(filePath));
   	fd = fs.openSync(filePath, 'w');
 	runner.on('test end', function(test){
-		// console.log('parent--->', test.parent);
-		// console.log('cxt--->', test.cxt);
-        // console.log('test--->', test);
 		var file = getFilePath(test);
 		// console.log('file-->', file);
-		file = file.substr(file.indexOf(process.cwd()) + process.cwd().length + 1);
+		file = file.substr(file.indexOf(root) + root.length + 1);
 		stackF = stack[file];
 		if(!stackF){
 			stackF = stack[file] = [];
@@ -106,7 +103,6 @@ function getFilePath(testObj){
 		return testObj.file;
 	}
 	if(testObj.parent.title ==''){
-		console.log('testObj-->', testObj);
 		return testObj.title;
 	}
 	else {
