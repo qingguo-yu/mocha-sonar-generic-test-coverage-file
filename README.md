@@ -1,4 +1,5 @@
 # mocha-sonar-generic-test-coverage-file
+[![Build][travis-image]][travis-url]
 
 Basically the same reporter as mocha-sonar-generic-test-coverage reporter(https://github.com/mageddo/mocha-sonar-generic-test-coverage), but writes the output to a file. And some issues fixed.
 
@@ -10,3 +11,6 @@ Notes:
 
 1. Please use mocha 1.20.1 or later version. Otherwise, file name could be empty in the report file.
 2. Please make sure no duplicated test case names. Otherwise, sonar will fail when uploading report to the server. 
+
+[travis-image]: https://travis-ci.org/qingguo-yu/mocha-sonar-generic-test-coverage-file.svg?branch=master
+[travis-url]: https://travis-ci.org/qingguo-yu/mocha-sonar-generic-test-coverage-file
