@@ -6,4 +6,6 @@ Why we need to do that? The logging output in the test cases can pollute the fin
 By default, the output file would be "gunit.xml" located in root folder of the same project.
 
 Notes:
+
 1. Please use mocha 1.20.1 or later version. Otherwise, file name could be empty in the report file.
+2. Please make sure no duplicated test case names. Otherwise, sonar will fail when uploading report to the server. 
