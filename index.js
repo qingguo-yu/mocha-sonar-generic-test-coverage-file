@@ -8,7 +8,7 @@ module.exports = function (runner) {
 
 	var stack = {};
 	var title,fd;
-	var root = process.env.PWD;
+	var root = process.cwd();
 	var filePath = process.env.GUNIT_FILE  || root + "/gunit.xml"
 	var stackF;
 	if(fs.existsSync(filePath)){
