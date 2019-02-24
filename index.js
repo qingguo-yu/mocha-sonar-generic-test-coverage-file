@@ -47,7 +47,7 @@ module.exports = function (runner) {
 	});
 
 	runner.on('end', function() {
-		append('<unitTest version="1">');
+		append('<testExecutions version="1">');
 		Object.keys(stack).forEach(function(file){
 			append(util.format('	<file path="%s">', file));
 			stack[file].forEach(function(test){
@@ -81,7 +81,7 @@ module.exports = function (runner) {
 			});
 			append('	</file>');
 		});
-		append('</unitTest>');
+		append('</testExecutions>');
 		fs.closeSync(fd);
 	});
 	function append(str) {
